@@ -1,3 +1,4 @@
+import "package:ecommerce/screens/forgot_password_screen.dart";
 import "package:ecommerce/screens/home_screen.dart";
 import "package:ecommerce/screens/signup_screen.dart";
 import "package:flutter/material.dart";
@@ -24,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "Enter Email",
                           border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.person),
+                          prefixIcon: Icon(Icons.email),
                         ),
                       ),
                       SizedBox(height: 15),
@@ -37,11 +38,19 @@ class LoginScreen extends StatelessWidget {
                           suffixIcon: Icon(Icons.remove_red_eye),
                         ),
                       ),
+                      
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: TextButton(onPressed: (){}, child: Text("Forgot Password?",
+                        child: TextButton(onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ForgotPasswordScreen(),
+                            ),
+                          );
+                        }, child: Text("Forgot Password?",
                           style: TextStyle(
-                            color: Color(0xFFEf6969),
+                            color: Color(0xFFDB3022),
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
@@ -63,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size.fromHeight(55),
-                          backgroundColor: Color(0xFFEf6968),
+                          backgroundColor: Color(0xFFDB3022),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
