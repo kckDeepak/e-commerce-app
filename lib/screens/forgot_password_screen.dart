@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/otp_screen.dart';
 import 'package:ecommerce/screens/recovery_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,12 +27,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10),
-              Text(
-                "Forgot Password",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Forgot Password",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
               ),
               SizedBox(height: 60),
               Text(
@@ -69,9 +73,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => RecoveryScreen(),
-                    ),
+                    MaterialPageRoute(builder: (context) => RecoveryScreen()),
                   );
                 },
                 child: Text(
@@ -86,6 +88,33 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                 ),
               ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: 24),
+                  Text("OR"),
+                  TextButton(
+                onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OTPScreen(),
+                  ),
+                  );
+                },
+                child: Text(
+                  "Verify Using Number",
+                  style: TextStyle(
+                    color: Color(0xFFEf6969),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+                ],
+              ),
+
+              
             ],
           ),
         ),
